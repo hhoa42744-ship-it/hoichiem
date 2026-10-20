@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoa thân gửi 💗 | 20/10</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ed, #fff0f5, #e9ddff);
+    color: #78334e;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 28px 20px;
+    background: rgba(255,255,255,.9);
+    border: 2px solid white;
+    border-radius: 28px;
+    box-shadow: 0 12px 40px rgba(211,105,145,.18);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #e74785;
+    font-size: clamp(28px, 6vw, 43px);
+}
+
+.subtitle {
+    color: #a65d7b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.big-heart {
+    font-size: 55px;
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.names {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.name-btn {
+    padding: 16px 8px;
+    border: 2px solid #ffc2d8;
+    border-radius: 18px;
+    background: white;
+    color: #d9417b;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.name-btn:hover, .name-btn.active {
+    background: linear-gradient(135deg,#ff79ad,#e74785);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px #f6b5d0;
+}
+
+.message-card {
+    display: none;
+    margin-top: 25px;
+    padding: 25px 18px;
+    background: linear-gradient(145deg,#fff6fa,#fff);
+    border: 1px solid #ffd2e3;
+    border-radius: 22px;
+}
+
+.message-card.show {
+    display: block;
+    animation: appear .5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.person-icon { font-size: 60px; }
+
+.message-card h2 {
+    color: #e74785;
+    font-size: 27px;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.gift-btn {
+    margin-top: 18px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#ff639e,#e73778);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #f3b1cc;
+}
+
+.gift-btn:hover { transform: scale(1.04); }
+
+.back-btn {
+    display: block;
+    margin: 18px auto 0;
+    padding: 12px 22px;
+    border: 2px solid #ffb5d0;
+    border-radius: 25px;
+    background: white;
+    color: #d9417b;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-btn:hover { background: #ffe0ed; }
+
+.gift-box {
+    display: none;
+    margin-top: 22px;
+    padding: 20px 12px;
+    background: #fff0f6;
+    border-radius: 18px;
+}
+
+.gift-box.show {
+    display: block;
+    animation: appear .6s ease;
+}
+
+.gift-art {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto 15px;
+}
+
+.gift-art svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 10px rgba(150,70,110,.13));
+}
+
+.gift-title {
+    color: #db3d7a;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #b76b8b;
+}
+
+.floating {
+    position: fixed;
+    top: -30px;
+    z-index: 0;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: .2;
+    }
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@media(max-width:400px) {
+    .container { padding: 22px 12px; }
+    .name-btn { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="big-heart">💗</div>
+
+    <h1>Happy Women's Day!</h1>
+
+    <div class="subtitle">
+        🌷 Chúc mừng ngày Phụ nữ Việt Nam 20/10 🌷<br>
+        Một món quà nhỏ dành riêng cho những cô gái đặc biệt!<br>
+        <b>Chọn tên của mình để mở lời chúc nhé 💌</b>
+    </div>
+
+    <div class="names">
+        <button class="name-btn" onclick="openMessage('Trang',this)">
+            🌷 Trang
+        </button>
+        <button class="name-btn" onclick="openMessage('Dung',this)">
+            🚘 Dung
+        </button>
+        <button class="name-btn" onclick="openMessage('Dương',this)">
+            🎂 Dương
+        </button>
+        <button class="name-btn" onclick="openMessage('Linh',this)">
+            💐 Linh
+        </button>
+    </div>
+
+    <div class="message-card" id="messageCard">
+        <div class="person-icon" id="personIcon">🌷</div>
+        <h2 id="personName"></h2>
+        <div class="message" id="personMessage"></div>
+
+        <button class="gift-btn" onclick="openGift()">
+            🎁 Nhấn để nhận quà
+        </button>
+
+        <div class="gift-box" id="giftBox">
+            <div class="gift-art" id="giftArt"></div>
+            <div class="gift-title" id="giftTitle"></div>
+            <p id="giftMessage"></p>
+            <p>💖 Happy Women's Day 20/10 💖</p>
+        </div>
+
+        <button class="back-btn" id="backBtn" onclick="goBack()">
+            ⬅ Hoa thân gửi
+        </button>
+    </div>
+
+    <div class="footer">
+        Made with 💗 — Hoa thân gửi 4 cô gái
+        <br>20/10 — Luôn xinh đẹp và hạnh phúc nhé!
+    </div>
+
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script>
+const girls = {
+    "Trang": {
+        icon: "🌷",
+        message: `Chúc Trang có một ngày 20/10 thật rực rỡ! 💗
+
+Chúc bà luôn xinh đẹp, vui vẻ, học hành thuận lợi,
+đi đâu cũng gặp may mắn và lúc nào cũng được yêu thương.
+
+Mong mọi điều tốt đẹp nhất sẽ đến với bà.
+Cứ luôn là phiên bản tuyệt vời nhất của chính mình nhé! 🌷`,
+
+        giftTitle: "Bó hoa tulip dành riêng cho Trang 🌷",
+        giftMessage: "Tặng bà bó tulip thật xinh. Chúc bà luôn tươi tắn, dịu dàng và rạng rỡ như những đóa hoa!",
+
+        art: `
+<svg viewBox="0 0 360 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="paperT" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#fff0d8"/><stop offset="1" stop-color="#e8b7d5"/>
+ </linearGradient>
+</defs>
+<rect width="360" height="330" rx="24" fill="#fff8fc"/>
+<circle cx="180" cy="140" r="105" fill="#ffe8f2"/>
+<path d="M105 150 L145 286 L218 286 L255 150Z" fill="url(#paperT)" stroke="#d9a7c0" stroke-width="2"/>
+<path d="M145 286 L177 218 L218 286" fill="#f4d5e6"/>
+<path d="M180 230 Q130 194 134 124 Q153 151 180 151" fill="#65a878"/>
+<path d="M180 230 Q226 187 224 124 Q204 151 180 151" fill="#78bb80"/>
+<g stroke="#478b60" stroke-width="5" fill="none" stroke-linecap="round">
+ <path d="M180 234 L180 92"/><path d="M153 225 L143 113"/>
+ <path d="M207 225 L222 115"/><path d="M168 224 L165 138"/>
+ <path d="M193 226 L197 130"/>
+</g>
+<g stroke="#478b60" stroke-width="3" fill="#6ab37a">
+ <path d="M171 197 Q130 185 137 158 Q161 168 171 197"/>
+ <path d="M191 190 Q231 166 228 146 Q199 159 191 190"/>
+ <path d="M152 190 Q119 168 123 145 Q148 155 152 190"/>
+ <path d="M207 198 Q241 183 245 162 Q217 170 207 198"/>
+</g>
+<g stroke="#cf527c" stroke-width="2">
+ <path d="M155 115 Q131 94 139 72 Q155 78 157 94 Q163 68 181 67 Q192 93 166 115Z" fill="#ff709e"/>
+ <path d="M184 98 Q163 74 177 53 Q191 60 192 77 Q202 49 219 57 Q227 81 197 100Z" fill="#f44e83"/>
+ <path d="M125 130 Q105 108 117 91 Q131 95 133 111 Q142 88 156 96 Q162 117 139 134Z" fill="#f98db0"/>
+ <path d="M210 126 Q195 103 210 86 Q224 94 224 108 Q235 86 249 97 Q252 118 226 133Z" fill="#fa6497"/>
+ <path d="M164 75 Q147 51 162 34 Q177 43 177 57 Q188 35 203 44 Q209 65 183 82Z" fill="#ff8ab0"/>
+</g>
+<path d="M145 263 Q180 248 217 263" stroke="#d64c86" stroke-width="9" fill="none"/>
+<path d="M177 259 C142 235 139 274 178 280 C216 272 214 236 177 259Z" fill="#e74785"/>
+<text x="180" y="315" text-anchor="middle" font-size="16" fill="#bf4778" font-weight="bold">Tulip bouquet for Trang</text>
+</svg>` 
+    },
+
+    "Dung": {
+        icon: "🚘",
+        message: `Chúc Dung ngày 20/10 ngập tràn niềm vui! 🎀
+
+Chúc bà luôn đáng yêu, mạnh khỏe, gặp nhiều điều may,
+tiền vào như nước, buồn phiền tự động biến mất.
+
+Mong bà luôn có thật nhiều lý do để cười,
+có người đồng hành và có những ngày thật bình yên.
+
+Happy Women's Day nhaaa! 💕`,
+
+        giftTitle: "Siêu xe Maybach dành cho Dung 🚘",
+        giftMessage: "Tặng bà chiếc siêu xe sang trọng trong mơ! Chúc bà luôn thành công, tiền đầy túi và sớm có xế hộp xịn nha!",
+
+        art: `
+<svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="carPaint" x1="0" y1="0" x2="0" y2="1">
+  <stop stop-color="#686d78"/><stop offset=".45" stop-color="#161a24"/><stop offset="1" stop-color="#05060a"/>
+ </linearGradient>
+ <linearGradient id="window" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#d6e5f0"/><stop offset="1" stop-color="#425365"/>
+ </linearGradient>
+</defs>
+<rect width="360" height="260" rx="24" fill="#f2f1f8"/>
+<circle cx="180" cy="112" r="91" fill="#e2e0ed"/>
+<ellipse cx="180" cy="208" rx="137" ry="14" fill="#c7c6d2"/>
+<path d="M34 165 L49 133 Q55 123 77 119 L117 75 Q124 67 141 67 L229 67 Q246 69 258 87 L288 124 Q316 129 327 150 L330 176 Q329 188 313 190 L48 190 Q32 187 34 165Z" fill="url(#carPaint)" stroke="#11141b" stroke-width="3"/>
+<path d="M83 120 L125 79 Q132 74 143 74 L172 74 L172 120Z" fill="url(#window)" stroke="#aeb7c1" stroke-width="3"/>
+<path d="M181 74 L226 75 Q238 77 246 91 L268 120 L181 120Z" fill="url(#window)" stroke="#aeb7c1" stroke-width="3"/>
+<path d="M177 72 L177 173" stroke="#b9bbc5" stroke-width="2"/>
+<path d="M190 137 L190 167 M255 137 L255 167" stroke="#b9bbc5" stroke-width="2"/>
+<path d="M43 154 L79 148 L79 169 L40 170Z" fill="#fff3d6"/>
+<path d="M293 146 L322 151 L322 164 L294 163Z" fill="#ff4258"/>
+<rect x="139" y="137" width="28" height="4" rx="2" fill="#b8bac4"/>
+<rect x="204" y="137" width="28" height="4" rx="2" fill="#b8bac4"/>
+<path d="M176 72 L176 64 L181 64 L181 73" fill="#c9a96e"/>
+<rect x="287" y="171" width="17" height="4" rx="2" fill="#ddd"/>
+<circle cx="93" cy="185" r="29" fill="#12131a" stroke="#a5a6b0" stroke-width="3"/>
+<circle cx="93" cy="185" r="17" fill="#c8ccd3"/>
+<circle cx="93" cy="185" r="7" fill="#535866"/>
+<circle cx="273" cy="185" r="29" fill="#12131a" stroke="#a5a6b0" stroke-width="3"/>
+<circle cx="273" cy="185" r="17" fill="#c8ccd3"/>
+<circle cx="273" cy="185" r="7" fill="#535866"/>
+<path d="M37 176 L329 176" stroke="#8b8d98" stroke-width="2"/>
+<text x="180" y="238" text-anchor="middle" font-size="16" fill="#464458" font-weight="bold">Luxury Maybach for Dung</text>
+</svg>`
+    },
+
+    "Dương": {
+        icon: "🎂",
+        message: `Happy 20/10 Dương nhé! 💜
+
+Chúc bà luôn tự tin, xinh đẹp, học giỏi và thành công.
+Mong bà có thật nhiều trải nghiệm đáng nhớ,
+gặp được những người chân thành và tử tế.
+
+Dù có chuyện gì cũng hãy luôn yêu thương bản thân,
+giữ nụ cười trên môi và tỏa sáng theo cách riêng của mình!
+
+Chúc bà một ngày thật đặc biệt! 🦋`,
+
+        giftTitle: "Bánh kem 10 tầng siêu hoành tráng dành cho Dương! 🎂",
+        giftMessage: "Tặng bà chiếc bánh kem đủ 10 tầng! Chúc bà vui vẻ 10 tầng, hạnh phúc 10 tầng và may mắn cũng 10 tầng luôn nhaaa! 🥳💕",
+
+        art: `
+<svg viewBox="0 0 360 410" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="cake" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#fff9fb"/><stop offset="1" stop-color="#f5b9d6"/>
+ </linearGradient>
+</defs>
+<rect width="360" height="410" rx="24" fill="#fff5fa"/>
+<circle cx="180" cy="190" r="145" fill="#ffe6f1"/>
+<ellipse cx="180" cy="365" rx="112" ry="12" fill="#edc2d8"/>
+<g stroke="#e29cbd" stroke-width="1.5">
+ <rect x="146" y="47" width="68" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="47" rx="34" ry="8" fill="#fff"/>
+ <rect x="137" y="76" width="86" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="76" rx="43" ry="8" fill="#fff"/>
+ <rect x="127" y="105" width="106" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="105" rx="53" ry="8" fill="#fff"/>
+ <rect x="117" y="134" width="126" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="134" rx="63" ry="8" fill="#fff"/>
+ <rect x="107" y="163" width="146" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="163" rx="73" ry="8" fill="#fff"/>
+ <rect x="97" y="192" width="166" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="192" rx="83" ry="8" fill="#fff"/>
+ <rect x="87" y="221" width="186" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="221" rx="93" ry="8" fill="#fff"/>
+ <rect x="77" y="250" width="206" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="250" rx="103" ry="8" fill="#fff"/>
+ <rect x="67" y="279" width="226" height="26" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="279" rx="113" ry="8" fill="#fff"/>
+ <rect x="57" y="308" width="246" height="34" rx="5" fill="url(#cake)"/>
+ <ellipse cx="180" cy="308" rx="123" ry="9" fill="#fff"/>
+</g>
+<g fill="#f05a9b">
+ <circle cx="165" cy="58" r="3"/><circle cx="190" cy="58" r="3"/>
+ <circle cx="154" cy="87" r="3"/><circle cx="180" cy="87" r="3"/><circle cx="207" cy="87" r="3"/>
+ <circle cx="145" cy="116" r="3"/><circle cx="180" cy="116" r="3"/><circle cx="216" cy="116" r="3"/>
+ <circle cx="135" cy="145" r="3"/><circle cx="180" cy="145" r="3"/><circle cx="225" cy="145" r="3"/>
+ <circle cx="125" cy="174" r="3"/><circle cx="180" cy="174" r="3"/><circle cx="235" cy="174" r="3"/>
+ <circle cx="115" cy="203" r="3"/><circle cx="180" cy="203" r="3"/><circle cx="245" cy="203" r="3"/>
+ <circle cx="105" cy="232" r="3"/><circle cx="180" cy="232" r="3"/><circle cx="255" cy="232" r="3"/>
+ <circle cx="95" cy="261" r="3"/><circle cx="180" cy="261" r="3"/><circle cx="265" cy="261" r="3"/>
+ <circle cx="85" cy="290" r="3"/><circle cx="180" cy="290" r="3"/><circle cx="275" cy="290" r="3"/>
+ <circle cx="75" cy="323" r="3"/><circle cx="180" cy="323" r="3"/><circle cx="285" cy="323" r="3"/>
+</g>
+<path d="M180 30 L180 15 M166 23 L180 10 L194 23" stroke="#e5a93b" stroke-width="4" fill="none" stroke-linecap="round"/>
+<g fill="#ffcd59">
+ <path d="M47 77 L51 88 L62 92 L51 96 L47 107 L43 96 L32 92 L43 88Z"/>
+ <path d="M300 104 L304 115 L315 119 L304 123 L300 134 L296 123 L285 119 L296 115Z"/>
+ <path d="M45 260 L49 271 L60 275 L49 279 L45 290 L41 279 L30 275 L41 271Z"/>
+</g>
+<text x="180" y="390" text-anchor="middle" font-size="16" fill="#bf4778" font-weight="bold">10 tầng ngọt ngào cho Dương</text>
+</svg>`
+    },
+
+    "Linh": {
+        icon: "💐",
+        message: `Gửi Linh, cô gái đáng yêu! 🌷
+
+Chúc Linh ngày 20/10 thật hạnh phúc,
+xinh đẹp hơn mỗi ngày, học tập thuận lợi
+và luôn gặp những điều dễ thương trong cuộc sống.
+
+Mong những điều bà đang cố gắng sẽ sớm có kết quả,
+những điều bà mong chờ sẽ dần thành hiện thực.
+
+Luôn vui vẻ, rạng rỡ và được yêu thương thật nhiều nha! 💖`,
+
+        giftTitle: "Bó cẩm tú cầu khổng lồ dành cho Linh 💐",
+        giftMessage: "Tặng Linh bó cẩm tú cầu thật to! Chúc bà luôn được yêu thương, hạnh phúc và xinh đẹp mỗi ngày!",
+
+        art: `
+<svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="hydPaper" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#e5d4fa"/><stop offset="1" stop-color="#c0a2de"/>
+ </linearGradient>
+</defs>
+<rect width="360" height="340" rx="24" fill="#faf5ff"/>
+<circle cx="180" cy="138" r="115" fill="#eee3ff"/>
+<path d="M76 155 L142 300 L225 300 L286 155Z" fill="url(#hydPaper)" stroke="#c2a3d8" stroke-width="2"/>
+<path d="M142 300 L181 223 L225 300" fill="#d5bde9"/>
+<g stroke="#568f65" stroke-width="5" fill="none">
+ <path d="M180 240 L112 112 M180 240 L143 91 M180 240 L179 78 M180 240 L215 86 M180 240 L250 112 M180 240 L92 142 M180 240 L268 142"/>
+</g>
+<g fill="#6caf7b" stroke="#4e8d61" stroke-width="1">
+ <ellipse cx="130" cy="188" rx="23" ry="10" transform="rotate(28 130 188)"/>
+ <ellipse cx="226" cy="188" rx="23" ry="10" transform="rotate(-28 226 188)"/>
+ <ellipse cx="159" cy="210" rx="23" ry="10" transform="rotate(25 159 210)"/>
+ <ellipse cx="206" cy="210" rx="23" ry="10" transform="rotate(-25 206 210)"/>
+</g>
+<g fill="#a98be7" stroke="#8b6ac9" stroke-width="1">
+ <circle cx="112" cy="105" r="20"/><circle cx="99" cy="96" r="15"/>
+ <circle cx="123" cy="91" r="17"/><circle cx="135" cy="108" r="17"/>
+ <circle cx="112" cy="122" r="17"/><circle cx="94" cy="119" r="15"/>
+ <circle cx="143" cy="81" r="18"/><circle cx="155" cy="96" r="17"/>
+ <circle cx="143" cy="108" r="16"/><circle cx="163" cy="76" r="17"/>
+ <circle cx="178" cy="75" r="19"/><circle cx="178" cy="94" r="18"/>
+ <circle cx="194" cy="85" r="17"/><circle cx="208" cy="94" r="19"/>
+ <circle cx="216" cy="77" r="16"/><circle cx="229" cy="99" r="18"/>
+ <circle cx="245" cy="107" r="20"/><circle cx="259" cy="121" r="17"/>
+ <circle cx="242" cy="129" r="19"/><circle cx="224" cy="119" r="18"/>
+ <circle cx="197" cy="108" r="18"/><circle cx="182" cy="113" r="17"/>
+ <circle cx="160" cy="113" r="18"/><circle cx="142" cy="125" r="18"/>
+ <circle cx="119" cy="139" r="17"/><circle cx="140" cy="141" r="17"/>
+ <circle cx="163" cy="133" r="19"/><circle cx="183" cy="133" r="18"/>
+ <circle cx="205" cy="139" r="18"/><circle cx="225" cy="146" r="18"/>
+</g>
+<g fill="#e4d7ff">
+ <circle cx="111" cy="105" r="4"/><circle cx="142" cy="91" r="4"/>
+ <circle cx="179" cy="80" r="4"/><circle cx="207" cy="95" r="4"/>
+ <circle cx="243" cy="107" r="4"/><circle cx="162" cy="114" r="4"/>
+ <circle cx="196" cy="126" r="4"/><circle cx="126" cy="132" r="4"/>
+ <circle cx="224" cy="136" r="4"/><circle cx="179" cy="143" r="4"/>
+</g>
+<path d="M144 275 Q180 257 223 275" stroke="#b56dc4" stroke-width="10" fill="none"/>
+<path d="M178 271 C143 246 142 285 179 292 C216 284 215 246 178 271Z" fill="#a675cc"/>
+<text x="180" y="325" text-anchor="middle" font-size="16" fill="#8051a5" font-weight="bold">Giant hydrangea bouquet for Linh</text>
+</svg>`
+    }
+};
+
+let selectedGirl = null;
+
+function openMessage(name, button) {
+    selectedGirl = name;
+    const girl = girls[name];
+
+    document.querySelectorAll(".name-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.getElementById("personIcon").textContent = girl.icon;
+    document.getElementById("personName").textContent =
+        "Hoa thân gửi " + name + " 💌";
+
+    document.getElementById("personMessage").textContent =
+        girl.message;
+
+    document.getElementById("backBtn").textContent =
+        "⬅ Hoa thân gửi " + name;
+
+    document.getElementById("giftBox").classList.remove("show");
+
+    const card = document.getElementById("messageCard");
+    card.classList.remove("show");
+    void card.offsetWidth;
+    card.classList.add("show");
+
+    card.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+    burstConfetti();
+}
+
+function openGift() {
+    if (!selectedGirl) return;
+
+    const girl = girls[selectedGirl];
+
+    document.getElementById("giftArt").innerHTML = girl.art;
+    document.getElementById("giftTitle").textContent =
+        girl.giftTitle;
+
+    document.getElementById("giftMessage").textContent =
+        girl.giftMessage;
+
+    const giftBox = document.getElementById("giftBox");
+    giftBox.classList.remove("show");
+    void giftBox.offsetWidth;
+    giftBox.classList.add("show");
+
+    giftBox.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+
+    burstConfetti();
+}
+
+function goBack() {
+    document.getElementById("messageCard").classList.remove("show");
+    document.getElementById("giftBox").classList.remove("show");
+
+    document.querySelectorAll(".name-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    selectedGirl = null;
+
+    document.querySelector(".names").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+// Hoa và trái tim rơi
+function createFloating() {
+    const el = document.createElement("div");
+    const items = ["🌸", "💗", "🌷", "💕", "✨", "🌹"];
+
+    el.className = "floating";
+    el.textContent = items[Math.floor(Math.random() * items.length)];
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.fontSize = (14 + Math.random() * 17) + "px";
+    el.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 11000);
+}
+
+setInterval(createFloating, 500);
+
+// Hiệu ứng giấy màu
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let animationRunning = false;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function burstConfetti() {
+    for (let i = 0; i < 75; i++) {
+        particles.push({
+            x: window.innerWidth / 2,
+            y: window.innerHeight * 0.35,
+            vx: (Math.random() - 0.5) * 12,
+            vy: Math.random() * -10 - 2,
+            gravity: 0.22,
+            size: Math.random() * 7 + 3,
+            color: [
+                "#ff5c9d", "#ffd166", "#c77dff",
+                "#ff85a1", "#8bd3dd"
+            ][Math.floor(Math.random() * 5)],
+            life: 100
+        });
+    }
+
+    if (!animationRunning) {
+        animationRunning = true;
+        animateConfetti();
+    }
+}
+
+function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.life--;
+
+        ctx.globalAlpha = Math.max(0, p.life / 100);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, p.size, p.size);
+    });
+
+    ctx.globalAlpha = 1;
+    particles = particles.filter(p => p.life > 0);
+
+    if (particles.length > 0) {
+        requestAnimationFrame(animateConfetti);
+    } else {
+        animationRunning = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+}
+</script>
+
+</body>
+</html>
